@@ -60,7 +60,7 @@ class Auth extends React.Component {
           .catch(error => {
             // eslint-disable-next-line no-console
             console.error(error);
-            // TODO: notify the user of the error
+            // TODO: notify the user of the  error
             return error;
           });
 
