@@ -6,5 +6,5 @@ export const Heading2 = styled.h2`
 `;
 
 export const HeadingMenu = styled.h1`
-  text-transform: capitalize;
+  font-size: 5vh;
 `;
