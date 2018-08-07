@@ -1,0 +1,65 @@
+#facebook_layer.menuOpen {
+    position:relative;
+    transform-origin: 50% 50%;
+    -webkit-animation: fbmove .5s forwards;
+    animation: fbmove .5s forwards;
+    animation-delay: .3s;
+}
+@-webkit-keyframes fbmove {
+  0% {
+		-webkit-transform: translate(0%) rotate(360deg);
+                transform: translate(0%) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: translate(-54%) rotate(0deg);
+            transform: translate(-54%) rotate(0deg);
+  }
+}
+#instagram_layer.menuOpen {
+    position:relative;
+    transform-origin: 50% 50%;
+    -webkit-animation: igmove .5s forwards;
+    animation: igmove .5s forwards;
+    animation-delay: .3s;
+}
+@-webkit-keyframes igmove {
+  0% {
+		-webkit-transform: translate(0%) rotate(360deg);
+            transform: translate(0%) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: translate(-39%) rotate(0deg);
+            transform: translate(-39%) rotate(0deg);
+  }
+}
+#twitter_layer.menuOpen {
+    position:relative;
+    transform-origin: 50% 50%;
+    -webkit-animation: twmove .5s forwards;
+    animation: twmove .5s forwards;
+    animation-delay: .3s;
+}
+@-webkit-keyframes twmove {
+  0% { -webkit-transform: translate(0%) rotate(360deg);
+       transform: translate(0%) rotate(360deg);
+  }
+  100% {
+        -webkit-transform: translate(-24%)  rotate(0deg);
+                transform: translate(-24%)  rotate(0deg);
+  }
+}
+#petfinder_layer.menuOpen {
+    position: relative;
+    transform-origin: 50% 50%;
+    -webkit-animation: pfmove .5s forwards; /* Safari 4.0 - 8.0 */
+    animation: pfmove .5 forwardss;
+    animation-delay: .3s;
+}
+@-webkit-keyframes pfmove {
+    0% { -webkit-transform: scale(.4) translate(0);
+         transform: scale(.4) translate(0);
+    }
+    100% { -webkit-transform: translate(35%) scale(1);
+           transform: translate(35%) scale(1);
+    }
+}
