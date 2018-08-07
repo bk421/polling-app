@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NavMenuSVG from 'NavMenuSVG'
+import NavMenuSVG from '../NavMenuSVG/index'
 
 import '../../fonts/_fonts.css'
 
