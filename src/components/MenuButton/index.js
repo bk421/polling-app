@@ -20,7 +20,10 @@ const MBContent = styled.div`
   width: 50px;
   margin: 0 auto;
 `
-const menu-button = styled.div`
+const Menubutton = styled.div.attrs({
+  mybg: props => props.databg || 'white',
+})`
+background-color: ${props => props.mybg};
 width: 100%;
 height: 100%;
 position: absolute;
@@ -28,14 +31,14 @@ border-radius: 50%;
 transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 z-index: 999;
 `
-const menu-link = styled(Link)`
+const Menulink = styled(Link)`
 border-radius: 50%;
 width: 100%;
 height: 100%;
 position: absolute;
 z-index: 1002;
 `
-const menu-icon = styled.span`
+const Menuicon = styled.span`
 position: absolute;
 width: 20px;
 height: 14px;
@@ -45,7 +48,7 @@ top: 0;
 right: 0;
 bottom: 1px;
 `
-const menu-line = styled.span`
+const Menuline = styled.span`
 background-color: #333;
 height: 2px;
 width: 100%;
@@ -54,40 +57,40 @@ position: absolute;
 left: 0;
 transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 `
-const menu-line-1 = styled(menu-line)`
+const Menuline1 = styled(Menuline)`
   top: 0;
 `
-const menu-line-2 = styled(menu-line)`
+const Menuline2 = styled(Menuline)`
   top: 0;
   bottom: 0;
   margin: auto;
 `
-const menu-line-3 = styled(menu-line)`
+const Menuline3 = styled(Menuline)`
   bottom: 0;
 `
-const BACKGROUND = 'background-color: #6CD1EF';
+const Menubackground = '#6CD1EF';
 
-const MenuButton = ({ menubackground }) => (
+const MenuButton = () => (
   <MBWrapper>
     <MBContent>
-      <menu-button background={menubackground}/>
-      <menu-link>
-        <menu-icon>
-          <menu-line-1></menu-line-1>
-          <menu-line-2></menu-line-2>
-          <menu-line-3></menu-line-3>
-        </menu-icon>
-      </menu-link>
+      <Menubutton databg={Menubackground}></Menubutton>
+      <Menulink>
+        <Menuicon>
+          <Menuline1></Menuline1>
+          <Menuline2></Menuline2>
+          <Menuline3></Menuline3>
+        </Menuicon>
+      </Menulink>
     </MBContent>
   </MBWrapper>
 );
 
-MenuButton.defaultProps = {
-  background: BACKGROUND
-};
-
-MenuButton.propTypes = {
-  background: PropTypes.string
-};
+// menu_button.defaultProps = {
+//   color: menubackground
+// };
+//
+// menu_button.propTypes = {
+//   color: PropTypes.string
+// };
 
 export default MenuButton;

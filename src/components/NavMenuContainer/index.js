@@ -7,7 +7,7 @@ import NavMenuBottom from '../NavMenuBottom/index';
 
 import '../../fonts/_fonts.css'
 
-const NavMenuContainer = styled.div`
+const NavMenuWrapper = styled.div`
   background-color: #6CD1EF;
   color: #333;
   height: 100%;
@@ -29,9 +29,11 @@ const NavMenuHR = styled.hr`
 `
 
 const NavMenuContainer = () => (
-  <NavMenuTop />
-  <NavMenuHr />
-  <NavMenuBottom />
+  <NavMenuWrapper>
+    <NavMenuTop />
+    <NavMenuHR />
+    <NavMenuBottom />
+  </NavMenuWrapper>
 );
 
 export default NavMenuContainer;

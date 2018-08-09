@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import NavMenuSVG from '../NavMenuSVG/index'
+import NavMenuBottomSVG from '../NavMenuSVG/convertedSVG'
 
 import '../../fonts/_fonts.css'
 
@@ -27,7 +27,7 @@ const NavMenuBottom_svgContainer = styled.div`
 const NavMenuTop = () => (
   <NavMenuBottom>
     <NavMenuBottom_svgContainer>
-      <NavMenuSVG/>
+      <NavMenuBottomSVG/>
     </NavMenuBottom_svgContainer>
 
   </NavMenuBottom>
