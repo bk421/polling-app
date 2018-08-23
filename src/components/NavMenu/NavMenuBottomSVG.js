@@ -1,5 +1,4 @@
 import React from 'react';
-import './iconAnimations.css'
 
 const NavMenuBottomSVG = props => (
   <svg

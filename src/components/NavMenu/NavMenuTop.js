@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -11,6 +10,9 @@ const MenuTop = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  color: ${props => props.menuTextColor ? props.menuTextColor : 'black'};
+  font-family: ${props => props.menuTextColor ? props.fontfamily : "Arial"};
 `
 const MainHeader = styled.h2`
   font-size: 8.5vh;
@@ -25,12 +27,9 @@ const SubMenu = styled.div`
   display:none;
   text-align:center;
 `
-const BACKGROUND = 'background-color: #6CD1EF';
-const FORECOLOR = 'color: #fff';
-const FONTFAMILY = 'font-family: "rimouskisemibold"';
 
-const NavMenuTop = ({ background, forecolor, fontfamily }) => (
-  <MenuTop background={background} color={forecolor} font-family={fontfamily}>
+const NavMenuTop = (props) => (
+  <MenuTop menuTextColor={props.menuTextColor} fontfamily={props.fontfamily}>
     <MainHeader>about</MainHeader>
     <SubMenu>
       <SubHeader>overview</SubHeader>
@@ -58,17 +57,5 @@ const NavMenuTop = ({ background, forecolor, fontfamily }) => (
       </SubMenu>
   </MenuTop>
 );
-
-NavMenuTop.defaultProps = {
-  background: BACKGROUND,
-  forecolor: FORECOLOR,
-  fontfamily: FONTFAMILY
-};
-
-NavMenuTop.propTypes = {
-  background: PropTypes.string,
-  forecolor: PropTypes.string,
-  fontfamily: PropTypes.string,
-};
 
 export default NavMenuTop;
