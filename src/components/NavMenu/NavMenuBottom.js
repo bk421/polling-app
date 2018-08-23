@@ -5,7 +5,7 @@ import NavMenuBottomSVG from './NavMenuBottomSVG'
 
 import '../../fonts/_fonts.css'
 
-const NavMenuBottom = styled.div`
+const NavMenuBottomContainer = styled.div`
 height: 75px;
 bottom: 1rem;
 position: absolute;
@@ -24,13 +24,12 @@ const NavMenuBottom_svgContainer = styled.div`
     min-width: 0;
     min-height: 0;
 `
-const NavMenuTop = () => (
-  <NavMenuBottom>
+const NavMenuBottom = () => (
+  <NavMenuBottomContainer>
     <NavMenuBottom_svgContainer>
       <NavMenuBottomSVG/>
     </NavMenuBottom_svgContainer>
-
-  </NavMenuBottom>
+  </NavMenuBottomContainer>
 );
 
-export default NavMenuTop;
+export default NavMenuBottom;
