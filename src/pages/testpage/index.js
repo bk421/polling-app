@@ -35,6 +35,7 @@ class testpage extends React.Component {
     super(props);
     this.state = { menuOpen: false };
     this.toggleMenu = this.toggleMenu.bind(this);
+    console.log('React version:' + React.version);
   };
 
   toggleMenu = () => {

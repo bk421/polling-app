@@ -81,7 +81,7 @@ const Menubackground = '#6CD1EF';
 const MenuButtonComponent = (props) => (
       <MBWrapper>
         <MBContent>
-          <Menubutton menuOpen={props.menuOpen}/>
+          <Menubutton/>
           <Menulink onClick={props.menuOpenToggleFunc} menuOpen={props.menuOpen}>
             <Menuicon menuOpen={props.menuOpen}>
               <Menuline1 menuOpen={props.menuOpen}></Menuline1>

@@ -24,10 +24,10 @@ const NavMenuBottom_svgContainer = styled.div`
     min-width: 0;
     min-height: 0;
 `
-const NavMenuBottom = () => (
+const NavMenuBottom = (props) => (
   <NavMenuBottomContainer>
     <NavMenuBottom_svgContainer>
-      <NavMenuBottomSVG/>
+      <NavMenuBottomSVG menuOpen={props.menuOpen}/>
     </NavMenuBottom_svgContainer>
   </NavMenuBottomContainer>
 );

@@ -1,15 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const NavMenuBottomSVG = props => (
-  <svg
-    viewBox="0 0 270.933 52.917"
-    width={500}
-    height={75}
-    id="svg3745"
-    {...props}
-  >
+const AnimationGroup = styled.g`
+  position: relative;
+  transform-origin: 50% 50%;
+  transition: all 1.0s cubic-bezier(.61,.23,.47,.9) 0.6s;
+`
+
+const PetfinderGroup = styled(AnimationGroup)`
+transform: scale(${props => props.menuOpen ? '1' : '.4'}) translate(${props => props.menuOpen ? '35%' : '0%'});
+`;
+const TwitterGroup = styled(AnimationGroup)`
+transform: translate(${props => props.menuOpen ? '-24%' : '0%'}) rotate(${props => props.menuOpen ? '0deg' : '360deg'});
+`;
+const FacebookGroup = styled(AnimationGroup)`
+transform: translate(${props => props.menuOpen ? '-54%' : '0%'}) rotate(${props => props.menuOpen ? '0deg' : '360deg'});
+`;
+const InstagramGroup = styled(AnimationGroup)`
+transform: translate(${props => props.menuOpen ? '-39%' : '0%'}) rotate(${props => props.menuOpen ? '0deg' : '360deg'});
+`;
+
+
+const NavMenuBottomSVG = (props) => (
+  <svg viewBox="0 0 270.933 52.917" width={500} height={75} id="svg3745" >
     <defs id="defs3739" />
-    <g id="petfinder_layer" className="animatedIcon">
+    <PetfinderGroup menuOpen={props.menuOpen}>
       <g id="g3948" transform="matrix(.0688 0 0 .0688 138.17 66.65)">
         <circle
           id="circle3923"
@@ -25,45 +41,36 @@ const NavMenuBottomSVG = props => (
           className="a"
           fill="#fff"
         />
-        <text
-          style={{ lineHeight: 1.25 }}
-          x={-1151.409}
-          y={209.829}
-          id="text4780"
-          fontWeight={400}
-          fontSize={153.846}
-          fontFamily="sans-serif"
-          letterSpacing={0}
-          wordSpacing={0}
-          strokeWidth={3.846}
+        <text style={{ lineHeight: 1.25 }} x={-1151.409} y={209.829} id="text4780" fontWeight={400} fontSize={153.846}
+          fontFamily="sans-serif" letterSpacing={0} wordSpacing={0} strokeWidth={3.846}
         />
       </g>
-    </g>
-    <g id="twitter_layer" className="animatedIcon">
+    </PetfinderGroup>
+    <TwitterGroup id="TwitterGroup1" menuOpen={props.menuOpen}>
       <path
         id="path3778"
         d="M144.644 22.304c-.701.311-1.454.52-2.245.615a3.915 3.915 0 0 0 1.718-2.162 7.829 7.829 0 0 1-2.482.949 3.902 3.902 0 0 0-2.852-1.235c-2.524 0-4.378 2.355-3.808 4.799a11.095 11.095 0 0 1-8.055-4.083 3.913 3.913 0 0 0 1.209 5.218 3.894 3.894 0 0 1-1.77-.49c-.042 1.811 1.256 3.505 3.135 3.882-.55.15-1.152.184-1.765.067a3.911 3.911 0 0 0 3.651 2.714 7.858 7.858 0 0 1-5.786 1.619 11.064 11.064 0 0 0 5.991 1.756c7.256 0 11.356-6.129 11.109-11.625a7.958 7.958 0 0 0 1.95-2.024z"
         fill="#fff"
         strokeWidth={0.794}
       />
-    </g>
-    <g id="instagram_layer" className="animatedIcon">
+    </TwitterGroup>
+    <InstagramGroup id="InstagramGroup1" menuOpen={props.menuOpen}>
       <path
         id="path3800"
         d="M136.994 18.846c2.543 0 2.845.01 3.85.056 2.581.117 3.787 1.342 3.904 3.904.046 1.004.055 1.306.055 3.849 0 2.544-.009 2.845-.055 3.849-.118 2.56-1.32 3.787-3.904 3.904-1.005.046-1.305.056-3.85.056-2.543 0-2.845-.01-3.849-.056-2.587-.118-3.787-1.348-3.904-3.905-.046-1.004-.056-1.305-.056-3.849 0-2.543.01-2.844.056-3.849.118-2.561 1.32-3.787 3.904-3.904 1.005-.045 1.306-.055 3.85-.055zm0-1.717c-2.587 0-2.91.011-3.926.057-3.46.159-5.382 2.078-5.54 5.54-.048 1.017-.059 1.341-.059 3.928 0 2.587.012 2.912.057 3.928.159 3.459 2.078 5.381 5.54 5.54 1.017.046 1.341.057 3.928.057 2.587 0 2.912-.011 3.928-.057 3.456-.159 5.383-2.078 5.54-5.54.046-1.016.057-1.341.057-3.928 0-2.587-.012-2.91-.057-3.927-.156-3.456-2.077-5.381-5.54-5.54-1.016-.047-1.34-.058-3.928-.058zm0 4.634a4.891 4.891 0 1 0 0 9.783 4.891 4.891 0 0 0 0-9.783zm0 8.066a3.175 3.175 0 1 1 0-6.35 3.175 3.175 0 0 1 0 6.35zm5.085-9.402a1.143 1.143 0 1 0 0 2.287 1.143 1.143 0 0 0 0-2.287z"
         fill="#fff"
         strokeWidth={0.794}
       />
-    </g>
-    <g id="facebook_layer" className="animatedIcon">
+    </InstagramGroup>
+    <FacebookGroup id="FacebookGroup1" menuOpen={props.menuOpen}>
       <path
         id="path3822"
         d="M134.975 22.095h-2.381v3.175h2.381v9.525h3.969V25.27h2.89l.285-3.175h-3.175v-1.323c0-.759.152-1.059.885-1.059h2.29v-3.968h-3.023c-2.854 0-4.121 1.256-4.121 3.663z"
         fill="#fff"
         strokeWidth={0.794}
       />
-    </g>
+    </FacebookGroup>
   </svg>
-)
+);
 
-export default NavMenuBottomSVG
+export default NavMenuBottomSVG;

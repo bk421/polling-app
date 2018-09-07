@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import ExpandableNavLink from './ExpandableNavLink'
 
 import '../../fonts/_fonts.css'
 
@@ -14,47 +16,55 @@ const MenuTop = styled.div`
   color: ${props => props.menuTextColor ? props.menuTextColor : 'black'};
   font-family: ${props => props.menuTextColor ? props.fontfamily : "Arial"};
 `
-const MainHeader = styled.h2`
-  font-size: 8.5vh;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 0;
-`
-const SubHeader = styled(MainHeader)`
-  font-size: 4vh;
-`
-const SubMenu = styled.div`
-  display:none;
-  text-align:center;
-`
+
+// paramater data array(pda) declarations
+var about_pda = {
+  toplinktext : 'about',
+  sublinks : [
+    { mykey: 1, href: '/overview', linktext: 'overview' },
+    { mykey: 2, href: '/mission', linktext: 'mission' },
+    { mykey: 3, href: '/results', linktext: 'results' },
+    { mykey: 4, href: '/team', linktext: 'our team' }
+  ]
+};
+var adopt_pda = {
+  toplinktext : 'adopt',
+  sublinks : [
+    { mykey: 1, href: '/adoptables', linktext: 'adoptable dogs' },
+    { mykey: 2, href: '/adopt_application', linktext: 'adoption application' }
+  ]
+};
+var help_pda = {
+  toplinktext : 'help us',
+  sublinks : [
+    { mykey: 1, href: '/foster', linktext: 'foster' },
+    { mykey: 2, href: '/volunteer', linktext: 'volunteer' },
+    { mykey: 3, href: '/donate', linktext: 'donate' }
+  ]
+};
+var events_pda = {
+  toplinktext : 'events',
+  sublinks : [
+    { mykey: 1, href: '/upcoming_events', linktext: 'upcoming events' },
+    { mykey: 2, href: '/recurring_events', linktext: 'recurring events' }
+  ]
+};
+var other_pda = {
+  toplinktext : 'other stuff',
+  sublinks : [
+    { mykey: 1, href: '/sponsors', linktext: 'sponsors' },
+    { mykey: 2, href: '/medical', linktext: 'medical recipients' },
+    { mykey: 3, href: '/media', linktext: 'news/media' }
+  ]
+};
 
 const NavMenuTop = (props) => (
   <MenuTop menuTextColor={props.menuTextColor} fontfamily={props.fontfamily}>
-    <MainHeader>about</MainHeader>
-    <SubMenu>
-      <SubHeader>overview</SubHeader>
-      <SubHeader>mission</SubHeader>
-      <SubHeader>results</SubHeader>
-      <SubHeader>our team</SubHeader>
-    </SubMenu>
-    <MainHeader>adopt</MainHeader>
-    <SubMenu>
-      <SubHeader>adoptable dogs</SubHeader>
-      <SubHeader>adoption application</SubHeader>
-    </SubMenu>
-    <MainHeader>help us</MainHeader>
-    <SubMenu>
-      <SubHeader>foster</SubHeader>
-      <SubHeader>volunteer</SubHeader>
-      <SubHeader>donate</SubHeader>
-    </SubMenu>
-    <MainHeader>events</MainHeader>
-    <MainHeader>other stuff</MainHeader>
-      <SubMenu>
-        <SubHeader>sponsors</SubHeader>
-        <SubHeader>medical recipients</SubHeader>
-        <SubHeader>news/media</SubHeader>
-      </SubMenu>
+    <ExpandableNavLink id='expandable_about' pda={about_pda} menuTextColor={props.menuTextColor} fontfamily={props.fontfamily} />
+    <ExpandableNavLink id='expandable_adopt' pda={adopt_pda} menuTextColor={props.menuTextColor} fontfamily={props.fontfamily} />
+    <ExpandableNavLink id='expandable_help' pda={help_pda} menuTextColor={props.menuTextColor} fontfamily={props.fontfamily} />
+    <ExpandableNavLink id='expandable_events' pda={events_pda} menuTextColor={props.menuTextColor} fontfamily={props.fontfamily} />
+    <ExpandableNavLink id='expandable_other' pda={other_pda} menuTextColor={props.menuTextColor} fontfamily={props.fontfamily} />
   </MenuTop>
 );
 

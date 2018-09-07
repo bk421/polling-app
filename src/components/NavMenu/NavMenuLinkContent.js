@@ -40,7 +40,7 @@ const NavMenuLinkContent = (props) => (
     <NavMenuHRContainer>
       <NavMenuHR />
     </NavMenuHRContainer>
-    <NavMenuBottom />
+    <NavMenuBottom menuOpen={props.menuOpen} />
   </NavMenuWrapper>
 );
 
